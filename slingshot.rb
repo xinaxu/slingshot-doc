@@ -18,7 +18,7 @@ deals.group_by{|deal| deal["filename"]}.to_a.sort_by{|k,v|k}.each do |filename, 
   puts "### #{desc[filename]}" if !desc.nil? && desc.has_key?(filename)
   puts "```"
   deals.each do |deal|
-    puts "lotus client retrieve --maxPrice $MAX_PRICE --miner #{deal["miner_id"]} #{deal["payload_cid"]}"
+    puts "lotus client retrieve --maxPrice $MAX_PRICE --miner #{deal["miner_id"]} #{deal["payload_cid"]} #{filename}"
   end
   puts "```"
 end
