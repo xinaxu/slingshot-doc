@@ -1,0 +1,37 @@
+fma_full_a_0.tar,This is the #1 part of the full size set of free music archive. Choose from below miners:
+fma_full_a_1.tar,This is the #2 part of the full size set of free music archive. Choose from below miners:
+fma_full_a_10.tar,This is the #11 part of the full size set of free music archive. Choose from below miners:
+fma_full_a_11.tar,This is the #12 part of the full size set of free music archive. Choose from below miners:
+fma_full_a_12.tar,This is the #13 part of the full size set of free music archive. Choose from below miners:
+fma_full_a_13.tar,This is the #14 part of the full size set of free music archive. Choose from below miners:
+fma_full_a_14.tar,This is the #15 part of the full size set of free music archive. Choose from below miners:
+fma_full_a_15.tar,This is the #16 part of the full size set of free music archive. Choose from below miners:
+fma_full_a_16.tar,This is the #17 part of the full size set of free music archive. Choose from below miners:
+fma_full_a_17.tar,This is the #18 part of the full size set of free music archive. Choose from below miners:
+fma_full_a_2.tar,This is the #3 part of the full size set of free music archive. Choose from below miners:
+fma_full_a_3.tar,This is the #4 part of the full size set of free music archive. Choose from below miners:
+fma_full_a_4.tar,This is the #5 part of the full size set of free music archive. Choose from below miners:
+fma_full_a_5.tar,This is the #6 part of the full size set of free music archive. Choose from below miners:
+fma_full_a_6.tar,This is the #7 part of the full size set of free music archive. Choose from below miners:
+fma_full_a_7.tar,This is the #8 part of the full size set of free music archive. Choose from below miners:
+fma_full_a_8.tar,This is the #9 part of the full size set of free music archive. Choose from below miners:
+fma_full_a_9.tar,This is the #10 part of the full size set of free music archive. Choose from below miners:
+fma_full_b_0.tar,This is the #19 part of the full size set of free music archive. Choose from below miners:
+fma_full_b_1.tar,This is the #20 part of the full size set of free music archive. Choose from below miners:
+fma_full_b_10.tar,This is the #29 part of the full size set of free music archive. Choose from below miners:
+fma_full_b_11.tar,This is the #30 part of the full size set of free music archive. Choose from below miners:
+fma_full_b_2.tar,This is the #21 part of the full size set of free music archive. Choose from below miners:
+fma_full_b_3.tar,This is the #22 part of the full size set of free music archive. Choose from below miners:
+fma_full_b_4.tar,This is the #23 part of the full size set of free music archive. Choose from below miners:
+fma_full_b_5.tar,This is the #24 part of the full size set of free music archive. Choose from below miners:
+fma_full_b_6.tar,This is the #25 part of the full size set of free music archive. Choose from below miners:
+fma_full_b_7.tar,This is the #26 part of the full size set of free music archive. Choose from below miners:
+fma_full_b_8.tar,This is the #27 part of the full size set of free music archive. Choose from below miners:
+fma_full_b_9.tar,This is the #28 part of the full size set of free music archive. Choose from below miners:
+fma_large_0.tar,This is the #1 part of the full size set of free music archive. Choose from below miners:
+fma_large_1.tar,This is the #2 part of the full size set of free music archive. Choose from below miners:
+fma_large_2.tar,This is the #3 part of the full size set of free music archive. Choose from below miners:
+fma_large_3.tar,This is the #4 part of the full size set of free music archive. Choose from below miners:
+fma_medium.zip,This is the medium size set of free music archive. Choose from below miners:
+fma_metadata.zip,This is the metadata of free music archive. Choose from below miners:
+fma_small.zip,This is the small size set of free music archive. Choose from below miners:
