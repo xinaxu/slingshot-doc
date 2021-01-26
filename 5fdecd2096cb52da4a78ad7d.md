@@ -1,7 +1,7 @@
-## To begin
-First, set a max price that you can tolerate
+## To get started
+First, set a max price that you can bear
 ```
-export MAX_PRICE=`
+export MAX_PRICE=1
 ```
 ## fma_full_a_0.tar
 ### This is the #1 part of the full size set of free music archive. Choose from below miners:

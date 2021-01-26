@@ -1,0 +1,22 @@
+CS_10.tar,CS 10. The Beauty and Joy of Computing
+CS_149.tar,EECS 149. Introduction to Embedded Systems
+CS_162_0.tar,CS 162. Operating Systems and System Programming Part 1
+CS_162_1.tar,CS 162. Operating Systems and System Programming Part 2
+CS_164.tar,CS 164. Programming Languages and Compilers
+CS_169_0.tar,CS 169. Software Engineering Part 1
+CS_169_1.tar,CS 169. Software Engineering Part 2
+CS_170.tar,CS 170. Efficient Algorithms and Intractable Problems
+CS_186.tar,CS 186. Introduction to Database Systems
+CS_188.tar,CS 188. Introduction to Artificial Intelligence
+CS_194.tar,CS 194. Special Topics
+CS_195.tar,CS 195. Social Implications of Computer Technology
+CS_198.tar,CS 198. Directed Group Studies for Advanced Undergraduates
+CS_294.tar,CS 294. Special Topics
+CS_61A_0.tar,CS 61A. The Structure and Interpretation of Computer Programs Part 1
+CS_61A_1.tar,CS 61A. The Structure and Interpretation of Computer Programs Part 2
+CS_61B_0.tar,CS 61B. Data Structures Part 1
+CS_61B_1.tar,CS 61B. Data Structures Part 2
+CS_61C.tar,CS 61C. Machine Structures
+CS_70_0.tar,CS 70. Discrete Mathematics and Probability Theory Part 1
+CS_70_1.tar,CS 70. Discrete Mathematics and Probability Theory Part 2
+CS_98.tar,CS 98. Directed Group Study

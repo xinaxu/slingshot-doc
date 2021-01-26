@@ -8,10 +8,10 @@ files = JSON.parse(RestClient.post("https://slingshot.filecoin.io/api/graphql", 
 deals.each do |deal|
   deal["filename"] = files[deal["deal_id"]]["filename"]
 end
-puts "## To begin"
-puts "First, set a max price that you can tolerate"
+puts "## To get started"
+puts "First, set a max price that you can bear"
 puts "```"
-puts "export MAX_PRICE=`"
+puts "export MAX_PRICE=1"
 puts "```"
 deals.group_by{|deal| deal["filename"]}.to_a.sort_by{|k,v|k}.each do |filename, deals|
   puts "## #{filename}"

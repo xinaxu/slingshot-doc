@@ -1,0 +1,16 @@
+train_0.tar,This is the #1 part of the google open image training set. Choose from below miners:
+train_1.tar,This is the #2 part of the google open image training set. Choose from below miners:
+train_10.tar,This is the #11 part of the google open image training set. Choose from below miners:
+train_11.tar,This is the #12 part of the google open image training set. Choose from below miners:
+train_12.tar,This is the #13 part of the google open image training set. Choose from below miners:
+train_13.tar,This is the #14 part of the google open image training set. Choose from below miners:
+train_2.tar,This is the #3 part of the google open image training set. Choose from below miners:
+train_3_0.tar,This is the #4 part of the google open image training set. Choose from below miners:
+train_3_1.tar,This is the #15 part of the google open image training set. Choose from below miners:
+train_4.tar,This is the #5 part of the google open image training set. Choose from below miners:
+train_5.tar,This is the #6 part of the google open image training set. Choose from below miners:
+train_6.tar,This is the #7 part of the google open image training set. Choose from below miners:
+train_7.tar,This is the #8 part of the google open image training set. Choose from below miners:
+train_8.tar,This is the #9 part of the google open image training set. Choose from below miners:
+train_9.tar,This is the #10 part of the google open image training set. Choose from below miners:
+val.tar,This is google open image validation set. Choose from below miners:
