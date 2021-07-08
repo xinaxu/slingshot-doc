@@ -1,12 +1,12 @@
 #!/usr/bin/ruby
-name = "segments"
+name = ARGV[0]
 files = Dir.glob(File.join(name, "**", "*"))
 index, size, lists, list = 0, 0, [], []
 files.sort.each do |file|
   next unless File.file? file
   size += File.size(file)
   list << file
-  if size > 18 * 1024 * 1024 * 1024
+  if size > 16 * 1024 * 1024 * 1024
     lists << list
     list = []
     index += 1
