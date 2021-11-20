@@ -2,6 +2,7 @@
 require 'fileutils'
 require 'pathname'
 require 'slop'
+require 'json'
 
 opts = Slop::Options.new
 opts.banner = 'Usage: ./spacecar.rb [options]'
@@ -60,43 +61,55 @@ id = 0
 output_name = File.join(output, Pathname.new(input).basename.to_s)
 paths = Pathname.glob(File.join(input, '**', '*'))
 system("ipfs repo gc")
-thread = nil
+@thread = nil
+def car(temp, output_name, id)
+    result = `ipfs add -r -p=false --pin=false --nocopy #{temp}`
+    puts result
+    ipld_map = result.lines.map do |line|
+      _, cid, path = line.strip.split(' ', 3)
+      [path, JSON.parse(`ipfs dag get #{cid}`)]
+    end.to_h
+    metadata = ipld_map.keys.map do |path|
+      filename = nil
+      links = []
+      Pathname.new(path).ascend.each do |v|
+        if filename.nil?
+          filename = v.basename.to_s
+        else
+          links << ipld_map[v.to_s]['links'].index{|e| e['Name'] == filename}
+          filename = v.basename.to_s
+        end
+      end
+      [path, links.reverse]
+    end
+    cid = result.lines[-1].split(' ', 3)[1]
+    File.write("#{output_name}.#{id}.txt", JSON.generate(metadata))
+    File.write("#{output_name}.#{id}.cid", cid)
+    system("ipfs dag export #{cid} > #{output_name}.#{id}.car")
+    system("ipfs repo gc")
+    FileUtils.rm_r(temp, force: true)
+    FileUtils.mkdir_p(temp)
+    @thread.join unless @thread.nil?
+    dir_size = 0
+    id = id + 1
+end
 paths.each do |path|
   next unless path.file?
   relative = path.relative_path_from(input)
   target = Pathname.new(temp).join(relative)
   FileUtils.mkdir_p(target.dirname.to_s)
-  FileUtils.mv(path.to_s, target.to_s)
+#  FileUtils.mv(path.to_s, target.to_s)
+  FileUtils.cp(path.to_s, target.to_s)
   dir_size += target.size
   if dir_size >= sector
-    puts "ipfs add -r -p=false --pin=false --nocopy #{temp} > #{output_name}.#{id}.txt"
-    system("ipfs add -r -p=false --pin=false --nocopy #{temp} > #{output_name}.#{id}.txt")
-    cid = File.read("#{output_name}.#{id}.txt").lines[-1].split(' ')[1]
-    puts "ipfs dag export #{cid} > #{output_name}.#{id}.car"
-    system("ipfs dag export #{cid} > #{output_name}.#{id}.car")
-    system("ipfs repo gc")
-    FileUtils.rm_r(temp, force: true)
-    FileUtils.mkdir_p(temp)
-    thread.join unless thread.nil?
-    dir_size = 0
-    id = id + 1
-    thread = Thread.new do
-      system("/mnt/downloads/src/go-graphsplit/graphsplit commP #{output_name}.#{id-1}.car > #{output_name}.#{id-1}.commP")
+    car(temp, output_name, id)
+    @thread = Thread.new do
+      system("graphsplit commP #{output_name}.#{id}.car > #{output_name}.#{id}.commP")
     end
   end
 end
 
   if dir_size > 0
-    puts "ipfs add -r -p=false --pin=false --nocopy #{temp} > #{output_name}.#{id}.txt"
-    system("ipfs add -r -p=false --pin=false --nocopy #{temp} > #{output_name}.#{id}.txt")
-    cid = File.read("#{output_name}.#{id}.txt").lines[-1].split(' ')[1]
-    puts "ipfs dag export #{cid} > #{output_name}.#{id}.car"
-    system("ipfs dag export #{cid} > #{output_name}.#{id}.car")
-    system("ipfs repo gc")
-    FileUtils.rm_r(temp, force: true)
-    FileUtils.mkdir_p(temp)
-    thread.join unless thread.nil?
-    dir_size = 0
-    id = id + 1
-    system("/mnt/downloads/src/go-graphsplit/graphsplit commP #{output_name}.#{id-1}.car > #{output_name}.#{id-1}.commP")
+    car(temp, output_name, id)
+    system("graphsplit commP #{output_name}.#{id}.car > #{output_name}.#{id}.commP")
   end
