@@ -87,29 +87,28 @@ def car(temp, output_name, id)
     File.write("#{output_name}.#{id}.cid", cid)
     system("ipfs dag export #{cid} > #{output_name}.#{id}.car")
     system("ipfs repo gc")
+    @thread.join unless @thread.nil?
+    @thread = Thread.new do
+      system("graphsplit commP #{output_name}.#{id}.car > #{output_name}.#{id}.commP")
+    end
     FileUtils.rm_r(temp, force: true)
     FileUtils.mkdir_p(temp)
-    @thread.join unless @thread.nil?
-    dir_size = 0
-    id = id + 1
 end
 paths.each do |path|
   next unless path.file?
   relative = path.relative_path_from(input)
   target = Pathname.new(temp).join(relative)
   FileUtils.mkdir_p(target.dirname.to_s)
-#  FileUtils.mv(path.to_s, target.to_s)
-  FileUtils.cp(path.to_s, target.to_s)
+  FileUtils.mv(path.to_s, target.to_s)
   dir_size += target.size
   if dir_size >= sector
     car(temp, output_name, id)
-    @thread = Thread.new do
-      system("graphsplit commP #{output_name}.#{id}.car > #{output_name}.#{id}.commP")
-    end
+    dir_size = 0
+    id = id + 1
   end
 end
 
-  if dir_size > 0
-    car(temp, output_name, id)
-    system("graphsplit commP #{output_name}.#{id}.car > #{output_name}.#{id}.commP")
-  end
+if dir_size > 0
+  car(temp, output_name, id)
+end
+@thread.join unless @thread.nil?
